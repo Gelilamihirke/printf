@@ -9,8 +9,8 @@ void print_buffer(char buffer[], int *buff_pos);
  */
 int _printf(const char *format, ...)
 {
-	int x,flags,wdth,prcsion,size;
-	int print = 0,chars_printed = 0,buff_pos = 0;
+	int x, flags, wdth, prcsion, size;
+	int print = 0, chars_printed = 0, buff_pos = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
 
@@ -25,8 +25,7 @@ int _printf(const char *format, ...)
 		if (format[x] != '%')
 		{
 			buffer[buff_pos++] = format[x];
-			
-			if(buff_pos == BUFF_SIZE)
+			if (buff_pos == BUFF_SIZE)
 			{
 				print_buffer(buffer, &buff_pos);
 			}
@@ -40,9 +39,7 @@ int _printf(const char *format, ...)
 			prcsion = get_precision(format, &x, list);
 			size = get_size(format, &x);
 			++x;
-			
-			print = handle_print(format, &x, list, buffer,flags, wdth, prcsion, size);
-			
+			print = handle_print(format, &x, list, buffer, flags, wdth, prcsion, size);
 			if (print == -1)
 			{
 				return (-1);
