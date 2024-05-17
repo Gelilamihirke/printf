@@ -4,7 +4,7 @@
  * get_size ->MUST calculate the size required to cast the arguments.
  * @format:the formatted string in which the arguments must be print.
  * @prntLst:List of arguments to be printed.
- * Return:the Size required.
+ * Return:the Size required
  */
 int get_size(const char *format, int *prntLst)
 {
